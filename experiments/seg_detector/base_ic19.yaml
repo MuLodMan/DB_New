@@ -1,0 +1,38 @@
+import:
+    - ['experiments','base.yaml']
+package:
+    - 'decoders.seg_detector_loss'
+define:
+  - name: train_data
+    class: ImageDataset
+    data_dir:
+        - ['datasets','icdar2019']
+    data_list:
+          - ['datasets','icdar2019','train_list.json']
+        # - 'datasets\icdar2019\train_single_sampler.json' #for sample debug
+    processes:
+        - class: make_padding
+        - class: AugumentMap
+          augmenter_args:
+              - {'method':'Fliplr','paras':0.5}
+              - {'method':'Affine','paras':{'rotate':[-10,10]}}
+              # - {'method':'Resize','paras':[0.5,1.25]}
+          only_resize: False
+          keep_ratio: False #useless in train
+        - class: MapMask
+        - class: NormalizeImage
+        # - class: FilterKeys
+        #   superfluous: ['c_size']
+
+  - name: validate_data
+    class: ImageDataset
+    data_dir:
+        - ['datasets','icdar2019']
+    data_list:
+        - ['datasets','icdar2019','test_loader.json']
+    processes:
+        - class: AugmentDetectionData
+          augmenter_args:
+            - {'padding_fit': True}
+        # - class: MakeSegDetectionData
+        - class: NormalizeImage

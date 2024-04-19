@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                //  "experiments\\seg_detector\\ic15_resnet18_deform_thre.yaml",
+                //  "--groupLevel","0",
+                //  "--resume","checkpoint\\ic15_resnet18" //for train resnet18 ic15
+
+
+
+                //  "experiments\\seg_detector\\ic15_resnet50_deform_thre.yaml",
+                //  "--image_path","datasets\\icdar2015\\train_images\\img_10.jpg",
+                //  "--resume","checkpoint\\ic15_resnet50",
+                //  "--polygon",
+                //  "--box_thresh","0.5",
+                //  "--visualize" //for demo resnet50_icdar15
+
+                 "experiments\\ASF\\ic19_resnent18_deform_thre_asf.yaml",
+                 "--image_path","datasets\\icdar2019\\train_images\\train_ReCTS_000042.jpg",
+                 "--resume","checkpoint\\DBnet++\\synthtext_finetune_ic19_res18_dcn_fpn_dbv2.pth", //\\synthtext_finetune_ic19_res18_dcn_fpn_dbv2.pth \\ic19_asf_deform_res18_500Iter.pth
+                 "--polygon",
+                 "--box_thresh","0.4",
+                 "--visualize"
+                //  ,"--image_short_side","1408"//for demo resnet18_icdar19 for my training
+
+                
+                //  "experiments\\ASF\\ic19_resnent50_deform_thre_asf.yaml",
+                //  "--image_path","datasets\\2019_demo\\train_ReCTS_000131.jpg",
+                //  "--resume","checkpoint\\DBnet++\\synthtext_finetune_ic19_res50_dcn_fpn_dbv2.pth",
+                //  "--polygon",
+                //  "--box_thresh","0.3",
+                //  "--visualize" //for demo resnet50_icdar19
+
+
+
+                //  "experiments\\ASF\\ic19_resnent18_deform_thre_asf.yaml", //for train resnet18_deformal ic19 asf
+                //  "--groupLevel","2",
+                //  "--resume","checkpoint\\DBnet++\\synthtext_finetune_ic19_res18_dcn_fpn_dbv2.pth"
+
+                //   "experiments\\seg_detector\\ic19_resnent18_thre.yaml", //for train resnet18 ic19 
+                //   "--groupLevel","2",
+                //   "--resume","checkpoint\\pre-trained-model-synthtext-resnet18"
+
+                // "experiments\\ASF\\ic19_resnent18_deform_thre_asf.yaml", //for train resnet18 db++ dcn ic19 
+                // "--groupLevel","2",
+                // "--resume","checkpoint\\DBnet++\\synthtext_finetune_ic19_res18_dcn_fpn_dbv2.pth"
+
+                // "experiments\\seg_detector\\ic15_resnet18_deform_thre.yaml",
+                // "--resume","checkpoint\\ic15_resnet18",
+                // "--polygon",
+                // "--box_thresh", "0.7"//for eval resnet18 deformal ic15
+                
+
+            ]
+        }
+    ]
+}
+
+// python train.py "experiments\\ASF\\ic19_resnent18_deform_thre_asf.yaml" "--groupLevel" "2" "--resume" "checkpoint\\ic19(DBnet++)\\synthtext_finetune_ic19_res18_dcn_fpn_dbv2.pth" //for train resnet18 ic19
+
+//for tensorboard log :  tensorboard  --logdir summaries
