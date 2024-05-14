@@ -1,3 +1,4 @@
+*source from https://github.com/MhLiao/DB
 ## News
 * DBNet and DBNet++ are included in [MindOCR](https://github.com/mindspore-lab/mindocr/tree/main/configs/det/dbnet), a MindSpore implementation.
 * The ASF module in DBNet++([TPAMI](https://ieeexplore.ieee.org/abstract/document/9726868/), [arxiv](https://arxiv.org/abs/2202.10304)) is released.
